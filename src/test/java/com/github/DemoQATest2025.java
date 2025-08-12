@@ -14,6 +14,7 @@ public class DemoQATest2025 {
         System.out.println("After all tests!\n");
     }
 
+
     @BeforeEach
     void beforeEach(){
         System.out.println("Before Test!\n");
