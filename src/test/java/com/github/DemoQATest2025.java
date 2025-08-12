@@ -32,7 +32,8 @@ public class DemoQATest2025 {
 
     @Test
     void secondTest() {
-        System.out.println("I love you QA.GURU-secondTest\n");
+        System.out.println("I love you Sasha\n");
+        
     }
 
 }
