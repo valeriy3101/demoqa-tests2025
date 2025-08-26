@@ -9,7 +9,8 @@ repositories{
 
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.1",
-    "com.codeborne:selenide:6.19.1") //подключаем селенид для тестов
+    "com.codeborne:selenide:6.19.1",
+    "io.github.bonigarcia:webdrivermanager:5.9.2") //подключаем селенид для тестов
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1",
     "org.slf4j:slf4j-simple:2.0.9") // для логирования
 }
