@@ -27,6 +27,8 @@ public class PracticeForm {
         $("#genterWrapper").$(byText("Male")).click();
         //$(byText("Other")).parent().click();
         //$(".custom-control-label").click();
+        //$("label[for='gender-radio-1']").click();
+        //$$("label.custom-contril-label").filter(text("Other")).get(0).click();
         $("#userNumber").setValue("3123312333");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").selectOptionByValue("1995");
