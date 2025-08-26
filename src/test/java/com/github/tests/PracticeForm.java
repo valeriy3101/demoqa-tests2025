@@ -6,7 +6,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 //import io.github.bonigarcia.wdm.WebDriverManager;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -21,6 +24,7 @@ public class PracticeForm {
     @Test
     void PtForm(){
         open("/automation-practice-form");
+        $(byText("Practice Form")).shouldBe(visible, Duration.ofSeconds(10));
         $("#firstName").setValue("Valeriy");
         $("#lastName").setValue("Romanovskiy");
         $("#userEmail").setValue("trasikVdatsunes@yandex.ru");
