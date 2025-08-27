@@ -8,8 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -35,9 +34,16 @@ public class PracticeForm {
         //$$("label.custom-contril-label").filter(text("Other")).get(0).click();
         $("#userNumber").setValue("3123312333");
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__year-select").selectOptionByValue("1995");
-        $(".react-datepicker__month-select").selectOptionByValue("0");
-        $(byText("31")).click();
+        //$(".react-datepicker__year-select").selectOptionByValue("1995");
+        $(".react-datepicker__year-select").selectOption("2005");
+        //$(".react-datepicker__month-select").selectOptionByValue("0");
+        $(".react-datepicker__month-select").selectOption("July");
+        //$(byText("31")).click();
+        //$(".react-datepicker__day__028:not(.react-datepicker__day--outside-month)").click(); // выберет такое число 28, которое не содержит класс "outside-month"
+        // $$ - массив элементов
+        //$$(".react-datepicker__day--028").filter(not(cssClass("react-datepicker__day--outside-month"))).first().click();
+        $x("//div[contains(@aria-label,\"June 28th, 2005\")]").click(); //*-любой элемент, но напишем div
+
         $("#subjectsInput").setValue("Chemistry").pressEnter();
         $("label[for='hobbies-checkbox-1']").click();
         $("#uploadPicture").uploadFromClasspath("moon.jpg");
