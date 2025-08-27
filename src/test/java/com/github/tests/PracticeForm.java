@@ -73,5 +73,7 @@ public class PracticeForm {
         //$x("//td[text()='Student Name']").parent().shouldHave(text("Valeriy Romanovskiy"));
 
         $("#closeLargeModal").click();
+
+        //ДЛЯ проверки красной рамки поля (валидации) - $("#firstName").shouldHave(cssValue("border-color", "rgb(220, 53, 69)")); необходим перевод в rgb
     }
 }
