@@ -68,8 +68,9 @@ public class PracticeForm {
         //$(".modal-title").shouldHave(text("Thanks for submitting the form"));
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
 
-        //$(".table-responsive").shouldHave(text("Valeriy Romanovskiy"), text("testik@ya.ru"), text("Male"), text("3123312333"), text("31 January,1995"), text("Chemistry"), text("Reading"), text("moon.jpg"), text("Test123"), text("NCR Delhi"));
-        $(".table-responsive").$(byText("Student Name")).shouldHave(text("Valeriy Romanovskiy"));
+        $(".table-responsive").shouldHave(text("Valeriy Romanovskiy"), text("trasikVdatsunes@yandex.ru"), text("Male"), text("3123312333"), text("28 July,2005"), text("Chemistry"), text("Reading"), text("moon.jpg"), text("Test"), text("NCR Gurgaon"));
+        //$(".table-responsive").$(byText("Student Name")).shouldHave(text("Valeriy Romanovskiy"));
+        //$x("//td[text()='Student Name']").parent().shouldHave(text("Valeriy Romanovskiy"));
 
         $("#closeLargeModal").click();
     }
