@@ -1,19 +1,34 @@
 plugins{
     id 'java-library'
-    id 'java'
+    id 'java' // говорит о том, что у нас проект будет на языке Java. Подключаем стандартный плагин
     id 'application'
 }
 
 repositories{
-    mavenCentral()
+    mavenCentral() //В данном репозитории мы будем искать библиотеки Java
 }
 
-dependencies {
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)  // определяем версию языка Java на проекте (интересует версия LTS)
+    }
+}
+
+compileTestJava{
+    options.encoding = 'UTF-8'
+}
+
+dependencies { // версии ищем в https://central.sonatype.com/?smo=true
+    //Selenide
+    //подключаем селенид для тестов
+    testImplementation("com.codeborne:selenide:6.19.1",
+    "io.github.bonigarcia:webdrivermanager:5.9.2")
+    testRuntimeOnly("org.slf4j:slf4j-simple:2.0.17") // для логирования
+
+    // JUnit 5
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.1",
-    "com.codeborne:selenide:6.19.1",
-    "io.github.bonigarcia:webdrivermanager:5.9.2") //подключаем селенид для тестов
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1",
-    "org.slf4j:slf4j-simple:2.0.9") // для логирования
+            "org.junit.jupiter:junit-jupiter-api:5.7.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1")
 }
 
 test {
